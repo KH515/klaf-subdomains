@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "المقالات"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "التاريخ", name: "date", widget: "datetime"}
+      - {label: "المحتوى", name: "body", widget: "markdown"}
+
+  - name: "banners"
+    label: "البنرات"
+    folder: "content/banners"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الصورة", name: "image", widget: "image"}
+      - {label: "رابط", name: "link", widget: "string"}
+
+  - name: "media"
+    label: "صور وفيديو"
+    folder: "content/media"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الملف", name: "file", widget: "file"}
